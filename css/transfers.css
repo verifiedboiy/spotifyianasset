@@ -1,0 +1,195 @@
+/* ==========================================================================
+   APEX PRIVATE BANKING - TRANSFERS PAGE SPECIFIC STYLES
+   Exact match to Transfer Page Reference Screenshot
+   ========================================================================== */
+
+.transfer-page-container {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 90px;
+}
+
+.transfer-section {
+  margin-bottom: 20px;
+}
+
+.transfer-section-title {
+  font-size: 15px;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: -0.2px;
+  margin-bottom: 8px;
+}
+
+/* Pay From Box */
+.pay-from-card {
+  background: #171821;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  padding: 16px 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  transition: background var(--transition-fast), border-color var(--transition-fast);
+}
+
+.pay-from-card:hover {
+  background: #1d1f2b;
+  border-color: rgba(255, 255, 255, 0.16);
+}
+
+.from-label {
+  font-size: 15px;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.from-selected-value {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 15px;
+  font-weight: 500;
+  color: #ffffff;
+}
+
+.from-selected-value svg {
+  width: 16px;
+  height: 16px;
+  stroke: #ffffff;
+  stroke-width: 2.2;
+}
+
+/* Pay To Grouped Container */
+.pay-to-grouped-card {
+  background: #171821;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  padding: 0 18px;
+  display: flex;
+  flex-direction: column;
+}
+
+.pay-to-input-row {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.pay-to-input-row:last-child {
+  border-bottom: none;
+}
+
+.transfer-bare-input {
+  width: 100%;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #ffffff;
+  font-family: var(--font-family);
+  font-size: 15px;
+  padding: 16px 0;
+}
+
+.transfer-bare-input::placeholder {
+  color: #606573;
+  font-weight: 400;
+}
+
+/* Amount Container */
+.amount-input-card {
+  background: #171821;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  padding: 14px 18px;
+  display: flex;
+  align-items: center;
+}
+
+.amount-input {
+  width: 100%;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #ffffff;
+  font-family: var(--font-family);
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: -0.3px;
+}
+
+.amount-input::placeholder {
+  color: #606573;
+}
+
+/* Memo Container */
+.memo-input-card {
+  background: #171821;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  padding: 14px 18px;
+  display: flex;
+  align-items: center;
+}
+
+.memo-input {
+  width: 100%;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #ffffff;
+  font-family: var(--font-family);
+  font-size: 15px;
+}
+
+.memo-input::placeholder {
+  color: #606573;
+}
+
+/* Review Payment Button (Screenshot exact match) */
+.review-payment-btn-wrap {
+  margin-top: 14px;
+  margin-bottom: 24px;
+}
+
+.review-payment-btn {
+  width: 100%;
+  background: #cbd5e1;
+  color: #0f172a;
+  border: none;
+  border-radius: var(--radius-full);
+  font-family: var(--font-family);
+  font-size: 16px;
+  font-weight: 700;
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  cursor: pointer;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+  transition: background var(--transition-fast), transform var(--transition-fast);
+}
+
+.review-payment-btn:hover {
+  background: #e2e8f0;
+}
+
+.review-payment-btn:active {
+  transform: scale(0.98);
+}
+
+.review-payment-btn.disabled,
+.review-payment-btn:disabled {
+  background: #1f2129;
+  color: #525866;
+  cursor: not-allowed;
+  opacity: 0.65;
+  box-shadow: none;
+  pointer-events: none;
+}
+
+.review-payment-btn svg {
+  width: 16px;
+  height: 16px;
+  fill: currentColor;
+}

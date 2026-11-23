@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <meta name="theme-color" content="#090a0e">
+  <meta name="description" content="Apex Private Banking - Accounts & Card Portfolio">
+  <title>Accounts - Apex Private Banking</title>
+  
+  <!-- Typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/accounts.css">
+</head>
+<body>
+
+  <!-- Desktop View Indicator -->
+  <div class="desktop-preview-bar">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect>
+      <line x1="12" y1="18" x2="12.01" y2="18"></line>
+    </svg>
+    <span>Mobile Web View</span>
+  </div>
+
+  <div class="app-viewport">
+    <main class="banking-container">
+      
+      <!-- Top Header -->
+      <header class="accounts-top-header">
+        <h1 class="page-title">Accounts</h1>
+        <div style="display:flex; align-items:center; gap:10px;">
+          <div class="spotify-sponsor-badge" aria-label="Spotify Partnership">
+            <svg viewBox="0 0 24 24">
+              <path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/>
+            </svg>
+            <span>Spotify</span>
+          </div>
+          <button class="create-card-btn" id="createCardBtn" aria-label="Create New Card" title="Create New Card">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <line x1="12" y1="5" x2="12" y2="19"></line>
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+            </svg>
+          </button>
+        </div>
+      </header>
+
+      <!-- Physical Card Carousel -->
+      <section class="card-carousel-wrap" aria-label="Card Portfolio">
+        <div class="card-carousel-viewport">
+          <div class="card-carousel-track" id="cardTrack">
+            <!-- Initial Add a New Card State (will transition to physical card upon creation) -->
+            <div class="add-card-placeholder" id="addCardPlaceholder">
+              <div class="add-card-icon-circle">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                  <line x1="12" y1="5" x2="12" y2="19"></line>
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                </svg>
+              </div>
+              <div class="add-card-title">Add a New Card</div>
+              <div class="add-card-subtitle">Tap here to issue your primary Debit, Platinum Credit, or Savings Card.</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Carousel Pagination Dots -->
+        <div class="carousel-dots" id="carouselDots" style="display: none;"></div>
+      </section>
+
+      <!-- Accounts Master Container (Single Grouped Card) -->
+      <section class="accounts-master-card" aria-label="Account Balances">
+        
+        <!-- Total Balance Header Row -->
+        <div class="master-total-row">
+          <span class="master-total-label">Total Balance</span>
+          <span class="master-total-val">$104,300<span class="cents">.00</span></span>
+        </div>
+
+        <!-- Account Row 1: Checking -->
+        <div class="account-detail-row" data-account="checking">
+          <div class="detail-left">
+            <div class="account-tint-icon blue" aria-hidden="true">
+              <!-- Real Banknote / Cash Icon -->
+              <svg viewBox="0 0 24 24">
+                <rect x="2" y="6" width="20" height="12" rx="2" fill="none" stroke="currentColor" stroke-width="2"></rect>
+                <circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="2"></circle>
+                <path d="M6 12h.01M18 12h.01" stroke="currentColor" stroke-width="3" stroke-linecap="round"></path>
+              </svg>
+            </div>
+            <div class="detail-texts">
+              <span class="detail-title">Checking</span>
+              <span class="detail-masked-num">••••4829</span>
+            </div>
+          </div>
+          <div class="detail-right">
+            <div class="balance-duo-stack">
+              <div class="duo-line">
+                <span class="duo-label">Available</span>
+                <span class="duo-val">$100,000<span class="cents">.00</span></span>
+              </div>
+              <div class="duo-line">
+                <span class="duo-label">Balance</span>
+                <span class="duo-val">$100,000<span class="cents">.00</span></span>
+              </div>
+            </div>
+            <div class="chevron-icon">
+              <svg viewBox="0 0 24 24" fill="none">
+                <polyline points="9 18 15 12 9 6"></polyline>
+              </svg>
+            </div>
+          </div>
+        </div>
+
+        <!-- Account Row 2: Platinum Card -->
+        <div class="account-detail-row" data-account="platinum">
+          <div class="detail-left">
+            <div class="account-tint-icon purple" aria-hidden="true">
+              <!-- Real Credit Card Icon -->
+              <svg viewBox="0 0 24 24">
+                <rect x="2" y="5" width="20" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="2"></rect>
+                <line x1="2" y1="10" x2="22" y2="10" stroke="currentColor" stroke-width="2"></line>
+              </svg>
+            </div>
+            <div class="detail-texts">
+              <span class="detail-title">Platinum Card</span>
+              <span class="detail-masked-num">••••9012</span>
+            </div>
+          </div>
+          <div class="detail-right">
+            <div class="balance-duo-stack">
+              <div class="duo-line">
+                <span class="duo-label">Available</span>
+                <span class="duo-val">$0<span class="cents">.00</span></span>
+              </div>
+              <div class="duo-line">
+                <span class="duo-label">Balance</span>
+                <span class="duo-val">$0<span class="cents">.00</span></span>
+              </div>
+            </div>
+            <div class="chevron-icon">
+              <svg viewBox="0 0 24 24" fill="none">
+                <polyline points="9 18 15 12 9 6"></polyline>
+              </svg>
+            </div>
+          </div>
+        </div>
+
+        <!-- Account Row 3: Savings -->
+        <div class="account-detail-row" data-account="savings">
+          <div class="detail-left">
+            <div class="account-tint-icon green" aria-hidden="true">
+              <!-- Real Bank Colonnade / Vault Icon -->
+              <svg viewBox="0 0 24 24">
+                <path d="M4 10h16v2H4zm0-4l8-4 8 4v2H4zm2 8h2v6H6zm5 0h2v6h-2zm5 0h2v6h-2zM2 22h20v2H2z"></path>
+              </svg>
+            </div>
+            <div class="detail-texts">
+              <span class="detail-title">Savings</span>
+              <span class="detail-masked-num">••••7731</span>
+            </div>
+          </div>
+          <div class="detail-right">
+            <div class="balance-duo-stack">
+              <div class="duo-line">
+                <span class="duo-label">Available</span>
+                <span class="duo-val">$4,300<span class="cents">.00</span></span>
+              </div>
+              <div class="duo-line">
+                <span class="duo-label">Balance</span>
+                <span class="duo-val">$4,300<span class="cents">.00</span></span>
+              </div>
+            </div>
+            <div class="chevron-icon">
+              <svg viewBox="0 0 24 24" fill="none">
+                <polyline points="9 18 15 12 9 6"></polyline>
+              </svg>
+            </div>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- Recent Transactions Section -->
+      <section class="recent-section" aria-label="Recent Transactions">
+        <h2 class="recent-title">Recent</h2>
+
+        <div class="recent-transactions-card">
+          <!-- Transaction 1: Spotify AB Treasury Disbursement -->
+          <div class="transaction-row">
+            <div class="tx-left">
+              <div class="tx-icon-badge" style="background:rgba(30, 215, 96, 0.16); color:#1ed760;" aria-hidden="true">
+                <!-- Real Spotify Vector Logo -->
+                <svg viewBox="0 0 24 24" style="width:20px; height:20px; fill:#1ed760;">
+                  <path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/>
+                </svg>
+              </div>
+              <div class="tx-texts">
+                <span class="tx-merchant">Spotify AB Treasury</span>
+                <span class="tx-subtext"><span style="color:#10b981; font-weight:600;">Disbursed</span> Nov 22 · Ref #SPOT-98214</span>
+              </div>
+            </div>
+            <span class="tx-amount" style="color:#10b981;">+$100,000<span class="cents">.00</span></span>
+          </div>
+
+          <!-- Transaction 2: Spotify Capital Reserve Yield -->
+          <div class="transaction-row">
+            <div class="tx-left">
+              <div class="tx-icon-badge" style="background:rgba(30, 215, 96, 0.16); color:#1ed760;" aria-hidden="true">
+                <!-- Real Bank/Vault Icon -->
+                <svg viewBox="0 0 24 24" style="width:20px; height:20px; fill:#1ed760;">
+                  <path d="M4 10h16v2H4zm0-4l8-4 8 4v2H4zm2 8h2v6H6zm5 0h2v6h-2zm5 0h2v6h-2zM2 22h20v2H2z"></path>
+                </svg>
+              </div>
+              <div class="tx-texts">
+                <span class="tx-merchant">Spotify Capital Reserve</span>
+                <span class="tx-subtext"><span style="color:#10b981; font-weight:600;">Yield Sweep</span> Nov 20 · Savings Reserve</span>
+              </div>
+            </div>
+            <span class="tx-amount" style="color:#10b981;">+$4,300<span class="cents">.00</span></span>
+          </div>
+
+          <!-- Transaction 3: Spotify Technology Activation Fee -->
+          <div class="transaction-row">
+            <div class="tx-left">
+              <div class="tx-icon-badge" style="background:rgba(245, 158, 11, 0.16); color:#fbbf24;" aria-hidden="true">
+                <!-- Real Shield / Security Icon -->
+                <svg viewBox="0 0 24 24" style="width:18px; height:18px; stroke:#fbbf24; fill:none; stroke-width:2; stroke-linecap:round; stroke-linejoin:round;">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                </svg>
+              </div>
+              <div class="tx-texts">
+                <span class="tx-merchant">Spotify Technology S.A.</span>
+                <span class="tx-subtext"><span class="tx-pending-highlight">Pending</span> Nov 23 · Card Provisioning Fee</span>
+              </div>
+            </div>
+            <span class="tx-amount">-$208<span class="cents">.00</span></span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Floating Bottom Navigation Bar -->
+      <div class="bottom-nav-container">
+        <nav class="bottom-nav" aria-label="Main Navigation">
+          <button class="nav-item" id="navHomeBtn" data-tab="home">
+            <svg viewBox="0 0 24 24">
+              <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+              <polyline points="9 22 9 12 15 12 15 22"></polyline>
+            </svg>
+            <span>Home</span>
+          </button>
+
+          <button class="nav-item active" data-tab="accounts">
+            <svg viewBox="0 0 24 24">
+              <rect x="2" y="5" width="20" height="14" rx="2"></rect>
+              <line x1="2" y1="10" x2="22" y2="10"></line>
+            </svg>
+            <span>Accounts</span>
+          </button>
+
+          <button class="nav-item" data-tab="transfers">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="4" y1="8" x2="20" y2="8"></line>
+              <polyline points="15 3 20 8 15 13"></polyline>
+              <line x1="20" y1="16" x2="4" y2="16"></line>
+              <polyline points="9 11 4 16 9 21"></polyline>
+            </svg>
+            <span>Transfers</span>
+          </button>
+
+          <button class="nav-item" data-tab="pay">
+            <svg viewBox="0 0 24 24">
+              <line x1="22" y1="2" x2="11" y2="13"></line>
+              <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+            </svg>
+            <span>Pay</span>
+          </button>
+        </nav>
+      </div>
+
+    </main>
+  </div>
+
+  <!-- Interactive Action Sheet / Card Creation Modal -->
+  <div class="modal-backdrop" id="modalBackdrop">
+    <div class="modal-sheet" id="modalSheet">
+      <div class="sheet-handle"></div>
+      <div class="sheet-header">
+        <h3 class="sheet-title" id="sheetTitle">Create New Card</h3>
+        <button class="sheet-close-btn" id="sheetCloseBtn" aria-label="Close dialog">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+      <div class="sheet-body" id="sheetBody">
+        <!-- Content injected dynamically -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Micro Toast Notification Component -->
+  <div class="banking-toast" id="bankingToast">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+      <path d="M20 6L9 17l-5-5"></path>
+    </svg>
+    <span id="toastMessage">Success</span>
+  </div>
+
+  <script src="js/accounts.js"></script>
+</body>
+</html>
